@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Em Một Bài Thơ</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffccd5, #cce5ff);
+            font-family: 'Arial', sans-serif;
+        }
+        .poem-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            color: #ff6f91;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 5px 0;
+            opacity: 0;
+            animation: slideIn 1s ease forwards;
+        }
+        p:nth-child(2) { animation-delay: 0.5s; }
+        p:nth-child(3) { animation-delay: 1s; }
+        p:nth-child(4) { animation-delay: 1.5s; }
+        p:nth-child(5) { animation-delay: 2s; }
+        p:nth-child(6) { animation-delay: 2.5s; }
+        p:nth-child(7) { animation-delay: 3s; }
+        p:nth-child(8) { animation-delay: 3.5s; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .heart {
+            color: #ff6f91;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="poem-container">
+        <h1>Gửi Em Một Bài Thơ</h1>
+        <p>Gửi em, cô gái, một bài thơ,</p>
+        <p>Là một bài thơ, của chàng khờ,</p>
+        <p>Học về, đối diện, vẫn nhung nhớ,</p>
+        <p>Cuộc gọi kề bên, vẫn mong chờ,</p>
+        <p>Tắt điện, rời xa, sao chẳng nở,</p>
+        <p>Em off, anh thấy, tưởng xa bờ.</p>
+        <p>Đêm đêm, dật dựa lòng trăn trở,</p>
+        <p>Trăng treo, nơi đó, vẫn lặng lờ.</p>
+        <div class="heart" id="heart">♥</div>
+    </div>
+
+    <script>
+        const heart = document.getElementById('heart');
+        let scale = 1;
+        setInterval(() => {
+            scale = scale === 1 ? 1.2 : 1;
+            heart.style.transform = `scale(${scale})`;
+        }, 1000);
+    </script>
+</body>
+</html>
